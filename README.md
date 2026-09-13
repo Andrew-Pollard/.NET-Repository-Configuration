@@ -11,8 +11,10 @@ From [dotnet/runtime v10.0.0][runtime-editorconfig].
 - **Types:** explicit types rather than `var`, reported as a warning; language keywords (`int`, `string`)
   rather than BCL type names.
 - **Naming:** `s_` for static fields, `_camelCase` for private and internal fields, PascalCase for constants.
-- **Layout:** file-scoped namespaces, `using` directives outside the namespace with System first, braces on
-  their own line and around every block.
+- **Layout:** file-scoped namespaces, `using` directives outside the namespace with System first and a blank
+  line between root namespaces, braces on their own line and around every block.
+- **Blank lines:** never more than one in a row, one after every block, none between closing braces. These
+  use Roslyn's experimental IDE2000–IDE2005 rules, reported as suggestions.
 - **Header:** `// © 2026 Andrew Pollard. All rights reserved.`
 - **Guides:** ruler hints at 80 and 120 columns, for the Visual Studio guidelines extension.
 
