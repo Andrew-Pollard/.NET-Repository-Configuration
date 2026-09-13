@@ -15,7 +15,8 @@ From [dotnet/runtime v10.0.0][runtime-editorconfig].
   line between root namespaces, braces on their own line and around every block.
 - **Blank lines:** never more than one in a row, one after every block, none between closing braces. These
   use Roslyn's experimental IDE2000–IDE2005 rules, reported as suggestions.
-- **Header:** `// © 2026 Andrew Pollard. All rights reserved.`
+- **Header:** `// © 2026 Andrew Pollard. All rights reserved.`, reported as a suggestion (IDE0073) when missing or
+  different. MIT-licensed repositories add a second line, `Licensed under the MIT License.`, to the template.
 - **Guides:** ruler hints at 80 and 120 columns, for the Visual Studio guidelines extension.
 
 > [!NOTE]
