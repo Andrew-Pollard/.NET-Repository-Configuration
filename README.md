@@ -44,6 +44,11 @@ Combines the GitHub [Windows][windows-gitignore], [Visual Studio][visualstudio-g
 - **Editor and user files:** `.vs/`, `*.user`, `*.suo`, and `.vscode/` apart from a few shared settings files.
 - **Windows shell files:** `Thumbs.db`, `desktop.ini` and `*.lnk`.
 
+## Licence
+
+Released under the [MIT License][license]. The notices for the projects these files are based on are in
+[THIRD-PARTY-NOTICES.md][notices].
+
 [runtime-editorconfig]: https://github.com/dotnet/runtime/blob/v10.0.0/.editorconfig
 [common-gitattributes]: https://github.com/gitattributes/gitattributes/blob/master/Common.gitattributes
 [csharp-gitattributes]: https://github.com/gitattributes/gitattributes/blob/master/CSharp.gitattributes
@@ -53,3 +58,5 @@ Combines the GitHub [Windows][windows-gitignore], [Visual Studio][visualstudio-g
 [windows-gitignore]: https://github.com/github/gitignore/blob/main/Global/Windows.gitignore
 [visualstudio-gitignore]: https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 [vscode-gitignore]: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+[license]: LICENSE
+[notices]: THIRD-PARTY-NOTICES.md
