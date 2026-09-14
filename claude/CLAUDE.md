@@ -14,6 +14,27 @@ project; the C# and Markdown files are imported at the end. Keep the three files
 - Mention bugs, broken invariants or doubtful assumptions you notice, even outside the current task.
 - Fix the root cause of warnings, errors and failing tests rather than suppressing them.
 
+# Before and during changes
+
+- Read the relevant code before answering questions about it or changing it; never guess at code you haven't opened.
+- If a request is ambiguous or rests on a doubtful assumption, say so and ask. If a simpler approach exists, say so.
+- Change only what the request needs. Mention problems in neighbouring code rather than refactoring or reformatting it.
+- Validate at boundaries, such as public API arguments and external input, not for cases that cannot happen.
+- Solve the general problem. Never hard-code values or special-case inputs to make tests pass; if a test looks wrong,
+  tell me instead of changing it.
+- Never weaken, skip or delete tests to get a passing build.
+- Ask before adding a package or other dependency.
+- Remove temporary scripts, files and debug output from the repository before finishing.
+
+# Communication
+
+- Lead with the answer or outcome, then the detail that supports it.
+- Be direct: no openers such as "Great question" or "You're absolutely right", no closing offers, and no restating
+  what I asked.
+- Disagree with reasons when you think I'm wrong, rather than going along with it.
+- Match certainty to evidence. Don't invent APIs, options, version numbers or citations; say you're unsure, then check.
+- Keep end-of-task summaries in proportion to the change: what changed, how it was verified, what's left.
+
 # Principles
 
 - **Readability first:** split work into small, descriptively named methods rather than dense blocks of
@@ -30,6 +51,12 @@ project; the C# and Markdown files are imported at the end. Keep the three files
 - American English in code, code comments, XML docs, configuration file comments and code snippets in Markdown, to
   match .NET's own spelling.
 - Where a .NET term reads oddly in British prose, such as "analyzers", rephrase it or name the type in code font.
+
+# Writing
+
+- Use plain, specific words: "is" rather than "serves as"; no "delve", "leverage", "seamless", "robust" or "crucial".
+- Avoid AI patterns: "not just X, but Y", reflexive groups of three, em dashes used as a crutch, inflated
+  significance, and closing paragraphs that only restate what came before.
 
 # Git
 
