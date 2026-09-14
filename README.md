@@ -1,6 +1,7 @@
 # Configuration
 
-Shared `.editorconfig`, `.gitattributes` and `.gitignore` for new repositories.
+Shared `.editorconfig`, `.gitattributes` and `.gitignore` for new repositories, and personal Claude Code
+instructions.
 
 ## `.editorconfig`
 
@@ -45,6 +46,16 @@ Combines the GitHub [Windows][windows-gitignore], [Visual Studio][visualstudio-g
 - **Editor and user files:** `.vs/`, `*.user`, `*.suo`, and `.vscode/` apart from a few shared settings files.
 - **Windows shell files:** `Thumbs.db`, `desktop.ini` and `*.lnk`.
 
+## `claude/`
+
+Follows [Anthropic's CLAUDE.md guidance][claude-memory] and draws on [dotnet/runtime's Copilot
+instructions][runtime-copilot]. `~/.claude/CLAUDE.md` imports `claude/CLAUDE.md`, which imports the other two files,
+so the instructions apply to every project.
+
+- **`CLAUDE.md`:** working practices, principles, spelling, Git, Windows quirks and new repositories.
+- **`csharp.md`:** projects, code style beyond `.editorconfig`, documentation, tests and native interop.
+- **`markdown.md`:** READMEs and Markdown.
+
 ## Licence
 
 Released under the [MIT License][license]. The notices for the projects these files are based on are in
@@ -59,5 +70,7 @@ Released under the [MIT License][license]. The notices for the projects these fi
 [windows-gitignore]: https://github.com/github/gitignore/blob/main/Global/Windows.gitignore
 [visualstudio-gitignore]: https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 [vscode-gitignore]: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+[claude-memory]: https://code.claude.com/docs/en/memory
+[runtime-copilot]: https://github.com/dotnet/runtime/blob/main/.github/copilot-instructions.md
 [license]: LICENSE
 [notices]: THIRD-PARTY-NOTICES.md
