@@ -25,7 +25,8 @@
 - Use private fields rather than private properties.
 - Prefer `is null`, `nameof`, pattern matching, switch expressions and throw helpers such as
   `ArgumentNullException.ThrowIfNull`. Trust nullable annotations rather than adding redundant null checks.
-- Asynchronous methods end in `Async`; public ones take a `CancellationToken` as their last parameter and pass it on.
+- Asynchronous methods end in `Async`, except test and benchmark methods, whose names the runners display; public
+  ones take a `CancellationToken` as their last parameter and pass it on.
   Avoid `async void` outside event handlers, never block on async code with `.Result` or `.Wait()`, and use
   `ConfigureAwait(false)` in library code.
 - Suppress an analyzer finding only when it can't reasonably be fixed, with
