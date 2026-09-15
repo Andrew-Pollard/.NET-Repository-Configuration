@@ -19,6 +19,8 @@ project; the C# and Markdown files are imported at the end. Keep the three files
 - Read the relevant code before answering questions about it or changing it; never guess at code you haven't opened.
 - If a request is ambiguous or rests on a doubtful assumption, say so and ask. If a simpler approach exists, say so.
 - Change only what the request needs. Mention problems in neighbouring code rather than refactoring or reformatting it.
+- Apply rules by their intent. If following one literally produces an awkward shape, such as a class that only wraps
+  others, choose the shape that serves the intent and say why.
 - Validate at boundaries, such as public API arguments and external input, not for cases that cannot happen.
 - Solve the general problem. Never hard-code values or special-case inputs to make tests pass; if a test looks wrong,
   tell me instead of changing it.

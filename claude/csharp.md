@@ -25,6 +25,8 @@
 - Use private fields rather than private properties.
 - Prefer `is null`, `nameof`, pattern matching, switch expressions and throw helpers such as
   `ArgumentNullException.ThrowIfNull`. Trust nullable annotations rather than adding redundant null checks.
+- When implementing a framework abstraction, match the behaviour of its built-in implementation, and don't handle
+  edge cases that it doesn't without a stated reason.
 - Asynchronous methods end in `Async`, except test and benchmark methods, whose names the runners display; public
   ones take a `CancellationToken` as their last parameter and pass it on.
   Avoid `async void` outside event handlers, never block on async code with `.Result` or `.Wait()`, and use
@@ -58,6 +60,9 @@ Blank lines split code into paragraphs that can be skimmed by intent, such as "v
   indicating whether". Use `<see langword="null"/>` for keywords, and don't start exception docs with "Thrown if".
 - Details that callers need go in `<remarks>`; notes for maintainers, such as rationale or "guarded by `_lock`",
   stay as `//` comments in the implementation.
+- Document only what callers wouldn't already expect from the type's contract. Don't restate that a disposable object
+  holds its resources until disposed, or that an implementation behaves like the framework's own; do point out where
+  it differs.
 - Public docs never `<see cref>` a private member; state the fact in prose instead.
 - Trailing comments are a few words at most, such as units; anything longer goes on the line above.
 
@@ -66,8 +71,9 @@ Blank lines split code into paragraphs that can be skimmed by intent, such as "v
 - Use NUnit with the constraint model (`Assert.That(actual, Is.EqualTo(expected))`), and NSubstitute only when
   something needs faking. Test projects reference `NUnit`, `NUnit3TestAdapter`, `NUnit.Analyzers` and
   `Microsoft.NET.Test.Sdk`.
-- Test fixtures are `internal sealed class`, named `<Type>Tests` in folders mirroring the code under test. Tests are
-  named `Method_Scenario_Expectation`.
+- Test fixtures are `internal sealed class`, named `<Type>Tests` in folders mirroring the code under test. A class
+  may have several fixtures when its tests need different setups, such as one run against several implementations.
+  Tests are named `Method_Scenario_Expectation`.
 - Group independent assertions in `using (Assert.EnterMultipleScope())`; use `[TestCase]` or `[TestCaseSource]`
   rather than near-duplicate tests.
 - No "Arrange", "Act" or "Assert" comments, and no commented-out or ignored tests left behind.
