@@ -14,6 +14,7 @@ From [dotnet/runtime v10.0.0][runtime-editorconfig].
 - **Naming:** `s_` for static fields, `_camelCase` for private and internal fields, PascalCase for constants.
 - **Layout:** file-scoped namespaces, `using` directives outside the namespace with System first and a blank
   line between root namespaces, braces on their own line and around every block.
+- **Method bodies:** block bodies rather than `=>` expression bodies, reported as a suggestion (IDE0022).
 - **Blank lines:** never more than one in a row, one after every block, none between closing braces. These
   use Roslyn's experimental IDE2000–IDE2005 rules, reported as suggestions.
 - **Header:** `// © 2026 Andrew Pollard. All rights reserved.` followed by `// Licensed under the MIT License.`,

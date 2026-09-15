@@ -25,6 +25,7 @@
 - Use private fields rather than private properties.
 - Prefer `is null`, `nameof`, pattern matching, switch expressions and throw helpers such as
   `ArgumentNullException.ThrowIfNull`. Trust nullable annotations rather than adding redundant null checks.
+- Methods have block bodies, never `=>` expression bodies; properties may use `=>`.
 - When implementing a framework abstraction, match the behaviour of its built-in implementation, and don't handle
   edge cases that it doesn't without a stated reason.
 - Asynchronous methods end in `Async`, except test and benchmark methods, whose names the runners display; public
@@ -35,13 +36,22 @@
   `[SuppressMessage("Category", "ID:Title", Justification = "…")]` on the narrowest member or type, or
   `[assembly: SuppressMessage(…)]` in `GlobalSuppressions.cs`. Never use `<NoWarn>` or `#pragma warning disable`.
 
+## Member order
+
+- Order a type's members as fields, constructors, properties, methods, then nested types. Don't group them by
+  accessibility, or by static and instance.
+- Order fields by purpose, with a lock directly beneath the fields it guards.
+- Order properties as a caller uses them, such as a support check before the instance it guards.
+- Put a method directly after the member that calls it, so the file reads from the top down. A method with several
+  callers goes after the last group of methods that calls it, and groups of methods follow the object's lifetime,
+  such as construction before the operations that come after it.
+
 ## Blank lines and wrapping
 
 Blank lines split code into paragraphs that can be skimmed by intent, such as "validate the arguments".
 
 - A blank line goes either side of any member with a body, XML docs or attributes, or that spans several lines.
-- Group single-line fields, constants and auto-properties by purpose, not by kind, with a blank line between groups.
-  A backing field sits directly under its property.
+- Group consecutive single-line fields, constants or auto-properties by purpose, with a blank line between groups.
 - Argument validation comes first, one paragraph per argument, then a blank line.
 - Leave a blank line after a closing brace, and before the final `return` unless it pairs with the line above.
 - Split calculations into paragraphs of one to three lines per step.
