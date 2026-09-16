@@ -51,11 +51,13 @@ Combines the GitHub [Windows][windows-gitignore], [Visual Studio][visualstudio-g
 
 Follows [Anthropic's CLAUDE.md guidance][claude-memory] and draws on [dotnet/runtime's Copilot
 instructions][runtime-copilot]. `~/.claude/CLAUDE.md` imports `claude/CLAUDE.md`, which imports the other two files,
-so the instructions apply to every project.
+so the instructions apply to every project. The refinement loop is not imported; it is there to be followed when a
+project is being polished rather than written.
 
 - **`CLAUDE.md`:** working practices, principles, spelling, Git, Windows quirks and new repositories.
 - **`csharp.md`:** projects, code style beyond `.editorconfig`, documentation, tests and native interop.
 - **`markdown.md`:** READMEs and Markdown.
+- **`refinement-loop.md`:** the pass to repeat over a finished project until it stops yielding improvements.
 
 ## Licence
 
