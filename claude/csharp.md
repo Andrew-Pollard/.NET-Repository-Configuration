@@ -18,6 +18,10 @@
 
 - `.editorconfig` is authoritative for formatting and naming, including `_camelCase` private fields, `s_` static
   fields and explicit types instead of `var`.
+- A name says what the thing is for. Prefer a longer name to a shorter one that needs a comment to explain it, and
+  shorten any name that can lose words without losing its meaning.
+- Abbreviate only in private field names, and only where the average developer would know the abbreviation in the
+  context of the project. Elsewhere abbreviate only where the base libraries already do.
 - Every file starts with `// © <year> Andrew Pollard. All rights reserved.` and `// Licensed under the MIT License.`
 - Access modifiers show intent, even inside internal types: `public` for what would be public API if the type were
   public (including interface implementations and P/Invoke declarations), `internal` for assembly plumbing, and
@@ -64,8 +68,11 @@ Blank lines split code into paragraphs that can be skimmed by intent, such as "v
 
 ## Comments and documentation
 
-- Every non-test type and member, including internal and private ones, has `///` XML docs; fields and trivial
-  private constructors may go without. Implementations of interface members can use `<inheritdoc/>`.
+- Every non-test type and member, including internal ones, has `///` XML docs; fields and trivial private
+  constructors may go without. Implementations of interface members can use `<inheritdoc/>`.
+- Comment a private member only where the information is not already obvious, because the name describes it or the
+  implementation reads plainly. Prefer a name that needs no comment, and treat a comment longer than the member it
+  describes as a sign it is restating the code rather than explaining it.
 - Summaries start with a present-tense verb ("Gets…", "Creates…"). Boolean properties start "Gets a value
   indicating whether". Use `<see langword="null"/>` for keywords, and don't start exception docs with "Thrown if".
 - Details that callers need go in `<remarks>`; notes for maintainers, such as rationale or "guarded by `_lock`",

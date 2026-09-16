@@ -40,8 +40,8 @@ project; the C# and Markdown files are imported at the end. Keep the three files
 # Principles
 
 - **Readability first:** split work into small, descriptively named methods rather than dense blocks of
-  algorithmic code. Trading some performance for readability is fine while the code still meets its purpose;
-  measure before choosing a denser, faster version.
+  algorithmic code, and prefer a name that needs no comment. Trading some performance for readability is fine while
+  the code still meets its purpose; measure before choosing a denser, faster version.
 - **Don't reinvent the wheel:** before building anything complicated, check whether it is already solved. Prefer the
   .NET base libraries, then reputable open-source libraries (Microsoft, Google and similar), then custom code, and
   say why when custom code is still needed.
